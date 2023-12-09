@@ -1,0 +1,22 @@
+{
+  "name": "datkey-node",
+  "version": "1.0.0",
+  "description": "Datkey API Client for Node.js",
+  "main": "datkey.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ShegeHQ/datkey-node.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ShegeHQ/datkey-node/issues"
+  },
+  "homepage": "https://github.com/ShegeHQ/datkey-node#readme",
+  "dependencies": {
+    "axios": "^1.6.2"
+  }
+}
