@@ -1,4 +1,4 @@
-export interface GenerateKeyBody {
+export interface GenerateKeyProps {
   api_id: string;
   name: string;
   prefix: string;
@@ -9,7 +9,7 @@ export interface MessageTypeResponse {
   message: string;
 }
 
-export interface VerifyKeyBody {
+export interface VerifyKeyProps {
   key: string;
   api_id: string;
 }
@@ -33,7 +33,7 @@ export interface VerifyKeyResponse {
   key: KeyObject;
 }
 
-export interface UpdateKeyBody {
+export interface UpdateKeyProps {
   verification_limit: string;
   expires_at: number;
 }

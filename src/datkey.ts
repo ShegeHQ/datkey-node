@@ -1,18 +1,18 @@
 import type {
   Config,
-  GenerateKeyBody,
+  GenerateKeyProps,
   KeyId,
   KeyObject,
   MessageTypeResponse,
-  UpdateKeyBody,
+  UpdateKeyProps,
   UpdateKeyResponse,
-  VerifyKeyBody,
+  VerifyKeyProps,
   VerifyKeyResponse,
 } from "./types";
 
 const Axios = require("axios");
 
-class Datkey {
+export class Datkey {
   private readonly axios;
 
   constructor(props: Config) {
@@ -25,9 +25,7 @@ class Datkey {
     });
   }
 
-  async generateKey(
-    payload: GenerateKeyBody
-  ): Promise<MessageTypeResponse | void> {
+  async generateKey(payload: GenerateKeyProps): Promise<MessageTypeResponse> {
     try {
       return await this.axios.post("/keys", payload);
     } catch (error) {
@@ -35,7 +33,7 @@ class Datkey {
     }
   }
 
-  async getKey(keyId: string): Promise<KeyObject | void> {
+  async getKey(keyId: string): Promise<KeyObject> {
     try {
       return await this.axios.get(`/keys/${keyId}`);
     } catch (error) {
@@ -43,7 +41,7 @@ class Datkey {
     }
   }
 
-  async revokeKey(keyId: KeyId): Promise<MessageTypeResponse | void> {
+  async revokeKey(keyId: KeyId): Promise<MessageTypeResponse> {
     try {
       return await this.axios.delete(`/keys/${keyId}`);
     } catch (error) {
@@ -51,7 +49,7 @@ class Datkey {
     }
   }
 
-  async verifyKey(payload: VerifyKeyBody): Promise<VerifyKeyResponse | void> {
+  async verifyKey(payload: VerifyKeyProps): Promise<VerifyKeyResponse> {
     try {
       return await this.axios.post(`/keys/verify`, payload);
     } catch (error) {
@@ -64,8 +62,8 @@ class Datkey {
     payload,
   }: {
     keyId: KeyId;
-    payload: UpdateKeyBody;
-  }): Promise<UpdateKeyResponse | void> {
+    payload: UpdateKeyProps;
+  }): Promise<UpdateKeyResponse> {
     try {
       return await this.axios.put(`/keys/${keyId}`, payload);
     } catch (error) {
@@ -81,5 +79,3 @@ class Datkey {
     }
   }
 }
-
-module.exports = { Datkey };
