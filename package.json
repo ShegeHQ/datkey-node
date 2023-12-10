@@ -1,11 +1,12 @@
 {
   "name": "datkey-node",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Datkey API Client for Node.js",
-  "main": "datkey.js",
-  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "pack": "npm run build && npm pack",
+    "build": "tsc"
   },
   "repository": {
     "type": "git",
@@ -21,6 +22,7 @@
     "axios": "^1.6.2"
   },
   "devDependencies": {
-    "@types/node": "^20.10.4"
+    "@types/node": "^20.10.4",
+    "typescript": "^5.3.3"
   }
 }
