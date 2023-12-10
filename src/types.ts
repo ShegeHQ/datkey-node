@@ -43,6 +43,8 @@ export interface UpdateKeyResponse {
 }
 
 export interface Config {
+  [x: string]: any;
+
   apiKey: string;
 }
 
