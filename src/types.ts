@@ -49,3 +49,13 @@ export interface Config {
 }
 
 export type KeyId = string;
+
+export interface GetWorkspaceResponse {
+  workspace: {
+    id: string;
+    name: string;
+    api_key: string;
+    created_at: string;
+    updated_at: string;
+  };
+}

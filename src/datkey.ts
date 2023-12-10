@@ -1,6 +1,7 @@
 import type {
   Config,
   GenerateKeyProps,
+  GetWorkspaceResponse,
   KeyId,
   KeyObject,
   MessageTypeResponse,
@@ -71,7 +72,7 @@ export class Datkey {
     }
   }
 
-  async getWorkspace() {
+  async getWorkspace(): Promise<GetWorkspaceResponse> {
     try {
       return await this.axios.get("/workspace");
     } catch (error) {
