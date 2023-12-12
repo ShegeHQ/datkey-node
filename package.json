@@ -1,6 +1,6 @@
 {
   "name": "datkey-node",
-  "version": "0.0.1",
+  "version": "1.0.1",
   "description": "Datkey API Client for Node.js",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
